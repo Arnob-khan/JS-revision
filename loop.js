@@ -5,6 +5,11 @@ for(const name of names){
     console.log(name);
 }
 
+let city="dhaka"
+for(const alpha of city){
+    console.log(`alphabet is ${alpha}`);
+}
+
 //while loop
 let sum=0;
 let num=1;
