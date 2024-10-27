@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body style="background-color: rgb(34, 33, 33); color:white">
+    <div class="container">
+        <ul id="list">
+            <li id="js">js</li>
+            <li id="java">java</li>
+            <li id="c++">c++</li>
+            <p id="p-tag" >Hello</p>
+        </ul>
+    </div> 
+</body>
+<script>
+
+//onclick method 
+//not recomended
+document.getElementById('js').onclick=function(e){
+   console.log(e);
+}
+
+document.getElementById('js').addEventListener('click',(e)=>{
+           console.log(e);
+      })
+
+
+      const list=document.querySelector('#list');
+      list.addEventListener('click',(e)=>{
+        //preventDeault use for stop prevent defaut work .
+          e.preventDefault()
+
+        //   e.stopPropagation();
+        //stop propagation use for bulbuling object
+
+          //prentNode given a target element parent
+        //   let remove= e.target.parentNode
+
+
+        //tagName use for finding tag Name
+        console.log(e);
+        
+        if(e.target.tagName==='LI'){
+            let removeIt= e.target;
+            removeIt.remove()
+        
+        }
+
+          
+      },false)
+
+    //bubuling and capturing is two opsite consept of js .add Event Listener default capturing consept is false ;
+
+
+</script>
+</html>
