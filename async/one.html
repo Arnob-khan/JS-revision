@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async document</title>
+</head>
+<body>
+        <div class="cotainer">
+            <button id="start-btn">start</button>
+            <button id="stop-btn">stop</button>
+        </div>
+</body>
+<script>
+    const start=document.querySelector('#start-btn');
+    const end=document.querySelector('#stop-btn');
+   
+    
+    
+    
+
+    const randomColor=function(){
+        const hexCode="0123456789ABCDEF"
+        let color="#"
+        for(let i=0;i<6;i++){
+      const randomValue=Math.floor(Math.random()*16);
+      color+=hexCode[randomValue];
+       
+      
+      }
+       return color;
+    }
+
+
+    
+
+    let setColor
+
+    start.addEventListener('click',function(){
+        console.log(changeColor());
+         setColor=setInterval(changeColor,1000)
+         function changeColor(){
+        document.body.style.backgroundColor=randomColor()
+    }
+    })
+
+    end.addEventListener('click',function(){
+        clearInterval(setColor)
+    })
+
+    
+
+    
+
+   
+     
+
+
+</script>
+</html>
